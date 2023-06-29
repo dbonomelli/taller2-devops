@@ -1,0 +1,13 @@
+$blue: #273094;
+$yellow: #ffc069;
+$purple: #150050;
+//bootstrap, aqui se pueden sobrescribir valores por defecto
+@import '~bootstrap/scss/bootstrap';
+//Primereact para los estilos
+@import '~primereact/resources/themes/saga-green/theme.css';
+@import '~primereact/resources/primereact.min.css';
+@import '~primeicons/primeicons.css';
+
+.bg-purple{
+    background: $purple;
+}
