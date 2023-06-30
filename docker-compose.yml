@@ -1,7 +1,7 @@
 version: "3.9"
 services:
-  trans_web:
-    container_name: trans_web
+  trans_web_dev:
+    container_name: trans_web_dev
     image: webtransbank:1.0
     build:
       context: $PWD/tiendatransbank-web
@@ -9,11 +9,11 @@ services:
     ports:
       - 9999:3000
     depends_on:
-      - trans_api
+      - trans_api_dev
     networks:
-      - tienda-net
-  trans_api:
-    container_name: trans_api
+      - tienda-net_dev
+  trans_api_dev:
+    container_name: trans_api_dev
     image: resttransbank:1.0
     build:
       context: $PWD/tiendatransbank-rest
@@ -21,7 +21,7 @@ services:
     ports:
       - 9091:8080
     networks:
-      - tienda-net
+      - tienda-net_dev
 networks:
-  tienda-net: 
+  tienda-net_dev: 
     
