@@ -19,6 +19,10 @@ export const AgregarProductoForm = ({onAgregar}) => {
         <div className="card">
             <div className="card-header bg-primary text-white">
                 <h3>Agregar Producto</h3>
+                <h3>Agregar Producto</h3>
+                <h3>Agregar Producto</h3>
+                <h3>Agregar Producto</h3>
+                <h3>Agregar Producto</h3>
             </div>
             <div className="card-body">
                 <div className="mb-3">
