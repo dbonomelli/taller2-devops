@@ -12,18 +12,6 @@ services:
       - trans_api
     networks:
       - tienda-net
-  trans_web2:
-    container_name: trans_web2
-    image: webtransbank:1.0
-    build:
-      context: $PWD/tiendatransbank-web
-      dockerfile: $PWD/DockerfileReact
-    ports:
-      - 9999:3000
-    depends_on:
-      - trans_api
-    networks: 
-      - tienda-net
   trans_api:
     container_name: trans_api
     image: resttransbank:1.0
@@ -32,21 +20,6 @@ services:
       dockerfile: $PWD/DockerfileSpring
     ports:
       - 9091:8080
-    depends_on:
-      - trans_bd
-    networks:
-      - tienda-net
-  trans_bd:
-    container_name: trans_bd
-    image: bdtransbank:1.0
-    build:
-      context: .
-      dockerfile: $PWD/DockerfileMongo
-    command: mongod --port 3308
-    ports: 
-      - 3308:3308
-    volumes: 
-      - ./bdvol:/data/db
     networks:
       - tienda-net
 networks:
