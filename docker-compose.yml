@@ -19,7 +19,7 @@ services:
       context: $PWD/tiendatransbank-web
       dockerfile: $PWD/DockerfileReact
     ports:
-      - 9998:3000
+      - 9999:3000
     depends_on:
       - trans_api
     networks: 
@@ -31,7 +31,7 @@ services:
       context: $PWD/tiendatransbank-rest
       dockerfile: $PWD/DockerfileSpring
     ports:
-      - 9090:8080
+      - 9091:8080
     depends_on:
       - trans_bd
     networks:
@@ -42,9 +42,9 @@ services:
     build:
       context: .
       dockerfile: $PWD/DockerfileMongo
-    command: mongod --port 3307
+    command: mongod --port 3308
     ports: 
-      - 3307:3307
+      - 3308:3308
     volumes: 
       - ./bdvol:/data/db
     networks:
